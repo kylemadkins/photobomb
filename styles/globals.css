@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#__next {
+	height: 100%;
+	font-size: 18px;
+	@apply text-slate-900;
+}
+
+.gradientBg {
+	background-image: linear-gradient(
+		110.3deg,
+		rgba(73, 93, 109, 1) 4.3%,
+		rgba(49, 55, 82, 1) 96.7%
+	);
+}
