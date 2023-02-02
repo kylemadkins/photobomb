@@ -58,7 +58,7 @@ export default function New() {
 									className="absolute top-4 right-4 flex h-8 w-8 items-center justify-center bg-white px-0 py-0"
 									onClick={() => setImage(null)}
 								>
-									<CloseIcon height={24} width={24} />
+									<CloseIcon height={16} width={16} />
 								</Button>
 							</motion.div>
 						) : (
