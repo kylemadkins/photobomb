@@ -28,8 +28,10 @@ export default function Textarea({
 				placeholder={placeholder}
 				required={required}
 				className="
-					h-[200px] bg-slate-100 px-4 py-5 font-serif text-slate-900
-          transition placeholder:text-slate-400 hover:bg-slate-200 focus:bg-slate-200 focus:outline-none
+					h-[200px] bg-slate-100 px-4 py-5 font-serif text-slate-900 transition
+					placeholder:italic placeholder:text-slate-400
+					hover:bg-slate-200
+					focus:bg-slate-200 focus:outline-none
         "
 				autoComplete="on"
 				onChange={onChange}

@@ -27,9 +27,10 @@ export default function Input({
 				required={required}
 				type={type}
 				className="
-					bg-slate-100 p-4 font-serif text-slate-900
-          transition placeholder:text-slate-400 hover:bg-slate-200 focus:bg-slate-200
-					focus:outline-none
+					bg-slate-100 p-4 font-serif text-slate-900 transition
+					placeholder:italic placeholder:text-slate-400
+					hover:bg-slate-200
+					focus:bg-slate-200 focus:outline-none
         "
 				autoComplete="on"
 				onChange={onChange}
