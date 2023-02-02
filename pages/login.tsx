@@ -62,10 +62,10 @@ export default function Login() {
 					</Form>
 					<p className="text-slate-900">
 						don&apos;t have an account?{" "}
-						<Link href="/join" className="text-regalPurple underline">
+						<Link href="/join" className="text-rose-600 underline">
 							join
 						</Link>
-						, dummy.
+						.
 					</p>
 				</Card>
 			</div>

@@ -3,7 +3,7 @@ import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import { useRouter } from "next/router";
 
 import Button from "./Button";
-import DoorIcon from "./icon/Door";
+import LogoutIcon from "./icon/Logout";
 
 type Props = {
 	username?: string | null;
@@ -28,7 +28,7 @@ export default function Navigation({ username = null }: Props) {
 			<Link href="/" className="flex items-center font-serif text-6xl">
 				photob*mb.
 			</Link>
-			<ul className="flex items-center gap-8 font-bold">
+			<ul className="flex items-center gap-6 font-bold">
 				{username ? (
 					<>
 						<li className="flex items-center">
@@ -36,7 +36,7 @@ export default function Navigation({ username = null }: Props) {
 						</li>
 						<li className="flex items-center">
 							<Button onClick={logout} variant="link" title="Logout">
-								<DoorIcon />
+								<LogoutIcon />
 							</Button>
 						</li>
 					</>

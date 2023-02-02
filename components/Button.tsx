@@ -6,6 +6,7 @@ type Props = {
 	variant?: "link" | "default" | "primary" | null;
 	title?: string;
 	onClick?: React.MouseEventHandler<HTMLButtonElement>;
+	type?: "button" | "reset" | "submit";
 	children?: React.ReactNode;
 };
 
@@ -16,10 +17,11 @@ export default function Button({
 	title = "",
 	onClick,
 	children,
+	type,
 }: Props) {
 	const variants = {
-		default: `relative shadow-[0_-3px_0_0_#0f172a,3px_3px_0_0_#0f172a,3px_0_0_0_#0f172a,0_3px_0_0_#0f172a] self-start flex gap-2 items-center bg-white px-6 py-2 font-bold text-slate-900 items-center before:absolute before:left-0 before:top-0 before:bottom-0 before:w-[3px] before:bg-slate-900 before:content-[''] ${className}`,
-		primary: `relative shadow-[0_-3px_0_0_#0f172a,3px_3px_0_0_#0f172a,3px_0_0_0_#0f172a,0_3px_0_0_#0f172a] self-start flex gap-2 items-center bg-regalPurple px-6 py-2 font-bold text-white items-center before:absolute before:left-0 before:top-0 before:bottom-0 before:w-[3px] before:bg-slate-900 before:content-[''] ${className}`,
+		default: `border-2 border-slate-900 self-start flex gap-2 items-center bg-white px-6 py-2 font-bold text-slate-900 items-center ${className}`,
+		primary: `border-2 border-slate-900 self-start flex gap-2 items-center bg-rose-600 px-6 py-2 font-bold text-white items-center ${className}`,
 		link: `font-bold ${className}`,
 	};
 
@@ -39,6 +41,7 @@ export default function Button({
 			title={title}
 			className={variant ? variants[variant] : variants.default}
 			onClick={onClick}
+			type={type}
 		>
 			{children}
 		</button>

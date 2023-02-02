@@ -77,10 +77,10 @@ export default function Join() {
 					</Form>
 					<p className="text-slate-900">
 						already have an account?{" "}
-						<Link href="/login" className="text-regalPurple underline">
+						<Link href="/login" className="text-rose-600 underline">
 							login
 						</Link>
-						, dummy.
+						.
 					</p>
 				</Card>
 			</div>

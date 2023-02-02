@@ -11,9 +11,8 @@ body,
 }
 
 .gradientBg {
-	background-image: linear-gradient(
-		110.3deg,
-		rgba(73, 93, 109, 1) 4.3%,
-		rgba(49, 55, 82, 1) 96.7%
-	);
+	background-image: url("/gradient.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
 }
