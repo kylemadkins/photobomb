@@ -24,8 +24,11 @@ export default function Navigation({ username = null }: Props) {
 	};
 
 	return (
-		<nav className="mx-auto flex w-full max-w-[1200px] items-center justify-between px-16 py-8">
-			<Link href="/" className="flex items-center font-serif text-6xl">
+		<nav className="mx-auto flex w-10/12 max-w-[1200px] items-center justify-between py-8">
+			<Link
+				href="/"
+				className="flex items-center font-serif text-6xl font-bold italic"
+			>
 				photob*mb.
 			</Link>
 			<ul className="flex items-center gap-6 font-bold">
