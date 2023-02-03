@@ -15,9 +15,6 @@ module.exports = {
 			animation: {
 				hourglass: "hourglass 1s ease-in-out infinite",
 			},
-			colors: {
-				regalPurple: "#6e44fe",
-			},
 			fontFamily: {
 				sans: ['"Karla"', "sans-serif"],
 				serif: ['"Piazzola"', "serif"],
