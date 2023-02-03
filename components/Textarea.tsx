@@ -15,10 +15,10 @@ export default function Textarea({
 }: Props) {
 	return (
 		<div className="flex flex-col gap-2">
-			<label htmlFor={id} className="font-bold text-slate-900">
+			<label htmlFor={id} className="font-bold text-slate-400">
 				{label}
 				{required ? (
-					<span className="font-display text-xs text-rose-600">*</span>
+					<span className="font-display text-xs text-orange-500">*</span>
 				) : (
 					""
 				)}
@@ -28,10 +28,10 @@ export default function Textarea({
 				placeholder={placeholder}
 				required={required}
 				className="
-					h-[200px] bg-slate-100 px-4 py-5 font-serif text-slate-900 transition
+					h-[200px] rounded-lg bg-slate-700 p-4 text-white transition
 					placeholder:italic placeholder:text-slate-400
-					hover:bg-slate-200
-					focus:bg-slate-200 focus:outline-none
+					hover:bg-slate-600
+					focus:bg-slate-600 focus:outline-none
         "
 				autoComplete="on"
 				onChange={onChange}

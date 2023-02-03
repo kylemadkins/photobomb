@@ -38,8 +38,13 @@ export default function Navigation({ username = null }: Props) {
 							<Link href="/profile">{username}</Link>
 						</li>
 						<li className="flex items-center">
-							<Button onClick={logout} variant="link" title="Logout">
-								<LogoutIcon />
+							<Button
+								onClick={logout}
+								variant="link"
+								title="Logout"
+								className="text-2xl"
+							>
+								👉🚪
 							</Button>
 						</li>
 					</>

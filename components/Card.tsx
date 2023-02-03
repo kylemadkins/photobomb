@@ -7,7 +7,7 @@ type Props = {
 export default function Card({ children }: Props) {
 	return (
 		<motion.div
-			className="flex flex-col gap-6 border-2 border-slate-900 bg-white p-10 shadow-[16px_16px_0_0_#0f172a]"
+			className="flex flex-col gap-6 rounded-3xl bg-slate-800 py-10 px-12"
 			initial={{ y: 40, opacity: 0 }}
 			animate={{ y: 0, opacity: 1 }}
 			transition={{

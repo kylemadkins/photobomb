@@ -29,7 +29,7 @@ export default function ImageUpload({ onUpload }: Props) {
 
 	return (
 		<motion.div
-			className="relative flex w-5/12 flex-col border-2 border-slate-900"
+			className="relative flex w-5/12 flex-col rounded-3xl border-2 border-slate-700"
 			initial={{ y: 40, opacity: 0 }}
 			animate={{ y: 0, opacity: 1 }}
 			transition={{
@@ -41,23 +41,23 @@ export default function ImageUpload({ onUpload }: Props) {
 		>
 			<div
 				{...getRootProps()}
-				className="flex aspect-square min-h-[300px] cursor-pointer flex-col items-center justify-center gap-4 px-4 py-8 text-center text-slate-900"
+				className="flex aspect-square min-h-[300px] cursor-pointer flex-col items-center justify-center gap-4 px-4 py-8 text-center text-slate-600"
 			>
 				<input {...getInputProps()} />
 
 				{isDragReject ? (
 					<>
-						<NeutralFaceIcon height={96} width={96} />
+						<span className="text-6xl">🙅‍♀️</span>
 						<p>sir this is a Wendy's.</p>
 					</>
 				) : isDragActive ? (
 					<>
-						<SmileyFaceIcon height={96} width={96} />
+						<span className="text-6xl">😇</span>
 						<p>drop it</p>
 					</>
 				) : (
 					<>
-						<ImageIcon height={96} width={96} />
+						<span className="text-6xl">📸</span>
 						<div>
 							<p className="font-serif text-lg italic">drag and drop</p>
 							<p>

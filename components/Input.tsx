@@ -17,9 +17,9 @@ export default function Input({
 }: Props) {
 	return (
 		<div className="flex flex-col gap-2">
-			<label htmlFor={id} className="font-bold text-slate-900">
+			<label htmlFor={id} className="font-bold text-slate-400">
 				{label}
-				{required ? <span className="text-rose-600">*</span> : ""}
+				{required ? <span className="text-orange-500">*</span> : ""}
 			</label>
 			<input
 				id={id}
@@ -27,10 +27,10 @@ export default function Input({
 				required={required}
 				type={type}
 				className="
-					bg-slate-100 p-4 font-serif text-slate-900 transition
+					rounded-lg bg-slate-700 p-4 text-white transition
 					placeholder:italic placeholder:text-slate-400
-					hover:bg-slate-200
-					focus:bg-slate-200 focus:outline-none
+					hover:bg-slate-600
+					focus:bg-slate-600 focus:outline-none
         "
 				autoComplete="on"
 				onChange={onChange}

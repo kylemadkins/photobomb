@@ -10,7 +10,7 @@ export default function DefaultLayout({ children }: Props) {
 	const user = useUser();
 
 	return (
-		<div className="gradientBg min-h-full pb-[100px]">
+		<div className="min-h-full bg-gray-900 pb-[100px]">
 			<Navigation username={user?.user_metadata.username} />
 			<div className="mt-[60px]">{children}</div>
 		</div>

@@ -51,14 +51,14 @@ export default function New() {
 							>
 								<img
 									src={URL.createObjectURL(image)}
-									className="h-auto w-full"
+									className="h-auto w-full rounded-3xl"
 								/>
 								<Button
 									type="button"
-									className="absolute top-4 right-4 flex h-8 w-8 items-center justify-center bg-white px-0 py-0"
+									className="absolute top-4 right-4 flex h-10 w-10 items-center justify-center bg-white p-[0px_!important]"
 									onClick={() => setImage(null)}
 								>
-									<CloseIcon height={16} width={16} />
+									❌
 								</Button>
 							</motion.div>
 						) : (
@@ -72,7 +72,9 @@ export default function New() {
 									placeholder="goofy's baptism"
 									required
 								/>
-								<Button variant="primary">Send it</Button>
+								<Button variant="primary">
+									Send it <span className="text-xl">😍</span>
+								</Button>
 							</Card>
 						</div>
 					</div>

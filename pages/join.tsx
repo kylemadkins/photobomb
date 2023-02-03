@@ -75,9 +75,9 @@ export default function Join() {
 							Join
 						</Button>
 					</Form>
-					<p className="text-slate-900">
+					<p>
 						already have an account?{" "}
-						<Link href="/login" className="text-rose-600 underline">
+						<Link href="/login" className="text-orange-500 underline">
 							login
 						</Link>
 						.

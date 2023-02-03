@@ -60,9 +60,9 @@ export default function Login() {
 							Login
 						</Button>
 					</Form>
-					<p className="text-slate-900">
+					<p>
 						don&apos;t have an account?{" "}
-						<Link href="/join" className="text-rose-600 underline">
+						<Link href="/join" className="text-orange-500 underline">
 							join
 						</Link>
 						.

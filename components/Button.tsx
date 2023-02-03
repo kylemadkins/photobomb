@@ -20,8 +20,8 @@ export default function Button({
 	type,
 }: Props) {
 	const variants = {
-		default: `border-2 border-slate-900 self-start flex gap-2 items-center bg-white px-6 py-2 font-bold text-slate-900 items-center ${className}`,
-		primary: `border-2 border-slate-900 self-start flex gap-2 items-center bg-rose-600 px-6 py-2 font-bold text-white items-center ${className}`,
+		default: `self-start flex gap-2 items-center bg-white px-6 py-3 font-bold text-slate-900 items-center rounded-full ${className}`,
+		primary: `self-start flex gap-2 items-center px-6 py-3 font-bold text-white items-center rounded-full bg-gradient-to-r from-red-500 to-orange-500 ${className}`,
 		link: `font-bold ${className}`,
 	};
 
