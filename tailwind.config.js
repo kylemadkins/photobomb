@@ -8,7 +8,7 @@ module.exports = {
 		extend: {
 			fontFamily: {
 				sans: ['"Karla"', "sans-serif"],
-				serif: ['"Piazzola"', "serif"],
+				display: ['"Unbounded"', "sans-serif"],
 			},
 		},
 	},

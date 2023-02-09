@@ -28,7 +28,7 @@ export default function Input({
 				type={type}
 				className="
 					rounded-md bg-slate-700 p-4 text-white transition
-					placeholder:italic placeholder:text-slate-400
+					placeholder:text-slate-400
 					hover:bg-slate-600
 					focus:bg-slate-600 focus:outline-none
         "

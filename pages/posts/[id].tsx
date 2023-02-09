@@ -19,6 +19,26 @@ type Props = {
 	bombs: Bomb[];
 };
 
+const container = {
+	hidden: { opacity: 1, scale: 0 },
+	visible: {
+		opacity: 1,
+		scale: 1,
+		transition: {
+			delayChildren: 0.3,
+			staggerChildren: 0.2,
+		},
+	},
+};
+
+const item = {
+	hidden: { y: 20, opacity: 0 },
+	visible: {
+		y: 0,
+		opacity: 1,
+	},
+};
+
 export default function Post({ post, bombs = [] }: Props) {
 	const supabase = useSupabaseClient();
 
@@ -94,7 +114,7 @@ export default function Post({ post, bombs = [] }: Props) {
 							<div className="flex aspect-square w-full flex-col items-center justify-center rounded-3xl border-2 border-slate-700 text-center">
 								<motion.div {...sharedAnimationProps}>
 									<span className="text-6xl">⌛</span>
-									<p className="font-serif text-lg italic">please hold.</p>
+									<p className="font-display text-lg">please hold.</p>
 								</motion.div>
 							</div>
 						) : prediction && prediction.output ? (
@@ -118,7 +138,7 @@ export default function Post({ post, bombs = [] }: Props) {
 						)}
 						{post.profiles ? (
 							<motion.div
-								className="mt-4 font-serif text-lg italic"
+								className="mt-4 font-display text-sm"
 								{...sharedAnimationProps}
 							>
 								{post.profiles.username}
@@ -164,20 +184,25 @@ export default function Post({ post, bombs = [] }: Props) {
 						</Card>
 					</div>
 				</div>
-				<div className="mt-12 grid grid-cols-3 gap-8">
+				<motion.div
+					className="mt-12 grid grid-cols-3 gap-8"
+					variants={container}
+					initial="hidden"
+					animate="visible"
+				>
 					{bombs.map((bomb) => (
-						<div key={bomb.id}>
+						<motion.div key={bomb.id} variants={item}>
 							<img
 								className="rounded-3xl"
 								src={getImageUrl(supabase, "bombs", bomb.image)}
 							/>
 							<div className="mt-4">
 								<p>"{bomb.instructions}"</p>
-								<p className="font-serif italic">{bomb.profiles.username}</p>
+								<p className="font-display text-sm">{bomb.profiles.username}</p>
 							</div>
-						</div>
+						</motion.div>
 					))}
-				</div>
+				</motion.div>
 			</div>
 		</DefaultLayout>
 	);

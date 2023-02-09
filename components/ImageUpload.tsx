@@ -59,10 +59,9 @@ export default function ImageUpload({ onUpload }: Props) {
 					<>
 						<span className="text-6xl">📸</span>
 						<div>
-							<p className="font-serif text-lg italic">drag and drop</p>
+							<p className="font-display">drag and drop</p>
 							<p>
-								or <span className="font-serif text-lg italic">click</span> to
-								select a photo
+								or <span className="font-display">click</span> to select a photo
 							</p>
 						</div>
 					</>

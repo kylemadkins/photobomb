@@ -17,11 +17,7 @@ export default function Textarea({
 		<div className="flex flex-col gap-2">
 			<label htmlFor={id} className="font-bold text-slate-400">
 				{label}
-				{required ? (
-					<span className="font-display text-xs text-orange-500">*</span>
-				) : (
-					""
-				)}
+				{required ? <span className="text-orange-500">*</span> : ""}
 			</label>
 			<textarea
 				id={id}
@@ -29,7 +25,7 @@ export default function Textarea({
 				required={required}
 				className="
 					h-[200px] rounded-md bg-slate-700 p-4 text-white transition
-					placeholder:italic placeholder:text-slate-400
+					placeholder:text-slate-400
 					hover:bg-slate-600
 					focus:bg-slate-600 focus:outline-none
         "
