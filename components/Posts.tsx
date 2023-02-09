@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-import { Doodle } from "@/types";
+import { Post } from "@/types";
 
 type Props = {
-	doodles: Doodle[];
+	posts: Post[];
 	loading?: boolean;
 };
 
@@ -28,7 +28,7 @@ const item = {
 	},
 };
 
-export default function Doodles({ doodles, loading = false }: Props) {
+export default function Posts({ posts, loading = false }: Props) {
 	return (
 		<motion.div
 			className="mx-auto w-[90%] max-w-[1200px]"
@@ -38,19 +38,19 @@ export default function Doodles({ doodles, loading = false }: Props) {
 		>
 			{!loading ? (
 				<>
-					{doodles.length ? (
+					{posts.length ? (
 						<div className="grid grid-cols-3 gap-8">
-							{doodles.map((doodle) => (
-								<motion.div key={doodle.id} variants={item}>
-									<Link href={`/doodles/${doodle.id}`}>
+							{posts.map((post) => (
+								<motion.div key={post.id} variants={item}>
+									<Link href={`/posts/${post.id}`}>
 										<img
-											src={doodle.url}
+											src={post.image}
 											className="border-[3px] border-slate-900"
 										/>
 									</Link>
-									{doodle.profiles ? (
+									{post.profiles ? (
 										<div className="font-display mt-4 text-xs">
-											{doodle.profiles.username}
+											{post.profiles.username}
 										</div>
 									) : (
 										""
@@ -60,7 +60,7 @@ export default function Doodles({ doodles, loading = false }: Props) {
 						</div>
 					) : (
 						<div className="flex min-h-[500px] flex-col items-center justify-center text-center">
-							<p className="mt-4">No doodles.</p>
+							<p className="mt-4">No posts.</p>
 						</div>
 					)}
 				</>

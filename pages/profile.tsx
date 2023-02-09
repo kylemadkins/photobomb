@@ -2,19 +2,9 @@ import { GetServerSideProps } from "next";
 import { createServerSupabaseClient } from "@supabase/auth-helpers-nextjs";
 
 import DefaultLayout from "@/components/DefaultLayout";
-import Doodles from "@/components/Doodles";
-import { Doodle } from "@/types";
 
-type Props = {
-	doodles: Doodle[];
-};
-
-export default function Profile({ doodles = [] }: Props) {
-	return (
-		<DefaultLayout>
-			<Doodles doodles={doodles} />
-		</DefaultLayout>
-	);
+export default function Profile() {
+	return <DefaultLayout></DefaultLayout>;
 }
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
@@ -32,15 +22,9 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 			},
 		};
 
-	const { data: doodles } = await supabase
-		.from("doodles")
-		.select()
-		.eq("user_id", session.user.id);
-
 	return {
 		props: {
 			initialSession: session,
-			doodles,
 		},
 	};
 };

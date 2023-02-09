@@ -48,12 +48,12 @@ export default function ImageUpload({ onUpload }: Props) {
 				{isDragReject ? (
 					<>
 						<span className="text-6xl">🙅‍♀️</span>
-						<p>sir this is a Wendy's.</p>
+						<p>only images!</p>
 					</>
 				) : isDragActive ? (
 					<>
 						<span className="text-6xl">😇</span>
-						<p>drop it</p>
+						<p>drop it!</p>
 					</>
 				) : (
 					<>

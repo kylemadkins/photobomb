@@ -10,12 +10,10 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 					"https://api.replicate.com/v1/predictions",
 					{
 						version:
-							"f178fa7a1ae43a9a9af01b833b9d2ecf97b1bcb0acfd2dc5dd04895e042863f1",
+							"30c1d0b916a6f8efce20493f5d61ee27491ab2a60437c13c588468b9810ec23f",
 						input: {
+							image: req.body.image,
 							prompt: req.body.prompt,
-							width: 512,
-							height: 512,
-							num_inference_steps: 100,
 						},
 					},
 					{

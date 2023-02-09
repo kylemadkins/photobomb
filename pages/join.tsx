@@ -72,7 +72,7 @@ export default function Join() {
 							}
 						/>
 						<Button variant="primary" className="mt-2">
-							Join
+							Join <span className="text-lg">🤝</span>
 						</Button>
 					</Form>
 					<p>

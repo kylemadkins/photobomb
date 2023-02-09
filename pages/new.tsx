@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FormEventHandler, useState } from "react";
 import { GetServerSideProps } from "next";
 import { createServerSupabaseClient } from "@supabase/auth-helpers-nextjs";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
@@ -17,25 +17,31 @@ export default function New() {
 	const supabase = useSupabaseClient();
 
 	const [image, setImage] = useState<File | null>(null);
+	const [caption, setCaption] = useState("");
 
-	const createPost = async (image: Blob) => {
-		const { data, error } = await supabase.storage
-			.from("posts")
-			.upload(`/${uuidv4()}.png`, image);
+	const createPost: FormEventHandler = async (evt) => {
+		evt.preventDefault();
 
-		if (!error) {
-			const { error } = await supabase.from("posts").insert({
-				url: `${process.env.NEXT_PUBLIC_STORAGE_URL}/${data.path}`,
-			});
-		} else {
-			alert(error);
+		if (image !== null) {
+			const { data, error } = await supabase.storage
+				.from("posts")
+				.upload(`/${uuidv4()}.${image.name.split(".").pop()}`, image);
+
+			if (!error) {
+				const { error } = await supabase.from("posts").insert({
+					image: data.path,
+					caption,
+				});
+			} else {
+				alert(error.message);
+			}
 		}
 	};
 
 	return (
 		<DefaultLayout>
 			<div className="mx-auto w-10/12 max-w-[1200px]">
-				<Form onSubmit={() => {}}>
+				<Form onSubmit={createPost}>
 					<div className="flex gap-12">
 						{image ? (
 							<motion.div
@@ -58,7 +64,7 @@ export default function New() {
 									className="absolute top-4 right-4 flex h-10 w-10 items-center justify-center bg-white p-[0px_!important]"
 									onClick={() => setImage(null)}
 								>
-									❌
+									<CloseIcon />
 								</Button>
 							</motion.div>
 						) : (
@@ -71,10 +77,9 @@ export default function New() {
 									label="Caption"
 									placeholder="goofy's baptism"
 									required
+									onChange={(evt) => setCaption(evt.target.value)}
 								/>
-								<Button variant="primary">
-									Send it <span className="text-xl">😍</span>
-								</Button>
+								<Button variant="primary">Send it 😍</Button>
 							</Card>
 						</div>
 					</div>

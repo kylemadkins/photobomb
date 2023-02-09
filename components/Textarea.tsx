@@ -28,7 +28,7 @@ export default function Textarea({
 				placeholder={placeholder}
 				required={required}
 				className="
-					h-[200px] rounded-lg bg-slate-700 p-4 text-white transition
+					h-[200px] rounded-md bg-slate-700 p-4 text-white transition
 					placeholder:italic placeholder:text-slate-400
 					hover:bg-slate-600
 					focus:bg-slate-600 focus:outline-none

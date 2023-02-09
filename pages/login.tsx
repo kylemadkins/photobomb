@@ -57,7 +57,7 @@ export default function Login() {
 							}
 						/>
 						<Button variant="primary" className="mt-2">
-							Login
+							Login <span className="text-lg">👋</span>
 						</Button>
 					</Form>
 					<p>
