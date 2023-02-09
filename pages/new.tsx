@@ -58,6 +58,7 @@ export default function New() {
 								<img
 									src={URL.createObjectURL(image)}
 									className="h-auto w-full rounded-3xl"
+									alt=""
 								/>
 								<Button
 									type="button"

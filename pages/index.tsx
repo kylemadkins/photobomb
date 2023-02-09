@@ -50,6 +50,7 @@ export default function Home({ posts }: Props) {
 								<img
 									className="rounded-3xl"
 									src={getImageUrl(supabase, "posts", post.image)}
+									alt=""
 								/>
 							</Link>
 							<div className="mt-4">

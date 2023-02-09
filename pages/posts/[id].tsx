@@ -195,9 +195,10 @@ export default function Post({ post, bombs = [] }: Props) {
 							<img
 								className="rounded-3xl"
 								src={getImageUrl(supabase, "bombs", bomb.image)}
+								alt=""
 							/>
 							<div className="mt-4">
-								<p>"{bomb.instructions}"</p>
+								<p>&quot;{bomb.instructions}&quot;</p>
 								<p className="font-display text-sm">{bomb.profiles.username}</p>
 							</div>
 						</motion.div>

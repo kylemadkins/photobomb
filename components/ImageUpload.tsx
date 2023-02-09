@@ -11,11 +11,14 @@ type Props = {
 };
 
 export default function ImageUpload({ onUpload }: Props) {
-	const onDrop = useCallback((acceptedFiles: File[]) => {
-		if (acceptedFiles.length) {
-			onUpload(acceptedFiles[0]);
-		}
-	}, []);
+	const onDrop = useCallback(
+		(acceptedFiles: File[]) => {
+			if (acceptedFiles.length) {
+				onUpload(acceptedFiles[0]);
+			}
+		},
+		[onUpload]
+	);
 
 	const { getRootProps, getInputProps, isDragActive, isDragReject } =
 		useDropzone({
