@@ -48,7 +48,7 @@ export default function Home({ posts }: Props) {
 						<motion.div key={post.id} variants={item}>
 							<Link href={`/posts/${post.id}`}>
 								<img
-									className="rounded-3xl"
+									className="h-72 w-full rounded-3xl object-cover object-top"
 									src={getImageUrl(supabase, "posts", post.image)}
 									alt=""
 								/>

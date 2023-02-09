@@ -114,14 +114,14 @@ export default function Post({ post, bombs = [] }: Props) {
 							<div className="flex aspect-square w-full flex-col items-center justify-center rounded-3xl border-2 border-slate-700 text-center">
 								<motion.div {...sharedAnimationProps}>
 									<span className="text-6xl">⌛</span>
-									<p className="font-display text-lg">please hold.</p>
+									<p>please hold.</p>
 								</motion.div>
 							</div>
 						) : prediction && prediction.output ? (
 							<AnimatePresence>
 								<motion.img
 									src={prediction.output[0] ?? ""}
-									className="aspect-square w-full rounded-3xl"
+									className="h-auto w-full rounded-3xl"
 									{...sharedAnimationProps}
 									exit={{ y: 40, opacity: 0 }}
 								/>
@@ -130,7 +130,7 @@ export default function Post({ post, bombs = [] }: Props) {
 							<AnimatePresence>
 								<motion.img
 									src={getImageUrl(supabase, "posts", post.image)}
-									className="aspect-square w-full rounded-3xl"
+									className="h-auto w-full rounded-3xl"
 									{...sharedAnimationProps}
 									exit={{ y: 40, opacity: 0 }}
 								/>
@@ -193,7 +193,7 @@ export default function Post({ post, bombs = [] }: Props) {
 					{bombs.map((bomb) => (
 						<motion.div key={bomb.id} variants={item}>
 							<img
-								className="rounded-3xl"
+								className="h-72 w-full rounded-3xl object-cover object-top"
 								src={getImageUrl(supabase, "bombs", bomb.image)}
 								alt=""
 							/>

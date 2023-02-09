@@ -76,7 +76,7 @@ export default function New() {
 								<Textarea
 									id="caption"
 									label="Caption"
-									placeholder="goofy's baptism"
+									placeholder="enter a caption..."
 									required
 									onChange={(evt) => setCaption(evt.target.value)}
 								/>
