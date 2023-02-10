@@ -2,7 +2,6 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import axios from "axios";
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
-	console.log(req.body);
 	switch (req.method) {
 		case "POST":
 			return axios
