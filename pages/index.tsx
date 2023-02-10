@@ -55,7 +55,9 @@ export default function Home({ posts }: Props) {
 							</Link>
 							<div className="mt-4">
 								<p>{post.caption}</p>
-								<p className="font-display text-sm">{post.profiles.username}</p>
+								<p className="font-display text-sm text-gray-500">
+									{post.profiles.username}
+								</p>
 							</div>
 						</motion.div>
 					))}

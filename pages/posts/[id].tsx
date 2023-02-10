@@ -137,11 +137,11 @@ export default function Post({ post, bombs = [] }: Props) {
 							</AnimatePresence>
 						)}
 						{post.profiles ? (
-							<motion.div
-								className="mt-4 font-display text-sm"
-								{...sharedAnimationProps}
-							>
-								{post.profiles.username}
+							<motion.div className="mt-4" {...sharedAnimationProps}>
+								<p>{post.caption}</p>
+								<p className="font-display text-sm text-gray-500">
+									{post.profiles.username}
+								</p>
 							</motion.div>
 						) : (
 							""
@@ -199,7 +199,9 @@ export default function Post({ post, bombs = [] }: Props) {
 							/>
 							<div className="mt-4">
 								<p>&quot;{bomb.instructions}&quot;</p>
-								<p className="font-display text-sm">{bomb.profiles.username}</p>
+								<p className="font-display text-sm text-gray-500">
+									{bomb.profiles.username}
+								</p>
 							</div>
 						</motion.div>
 					))}
@@ -227,7 +229,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 	const { data: post } = await supabase
 		.from("posts")
 		.select(
-			`id, image, profiles (
+			`id, image, caption, profiles (
 				username
 			)`
 		)
